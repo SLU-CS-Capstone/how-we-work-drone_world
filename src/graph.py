@@ -23,7 +23,7 @@ class Graph:
                 result = True
         return result
 
-    def get_spanning_tree(self, start):
+    def get_spanning_tree(self, start, seedVal):
         spanning_tree = Graph(self.num_nodes)
         stack = []
         visited = [False]*self.num_nodes
@@ -37,6 +37,7 @@ class Graph:
                 if not visited[next_node]:
                     unvisited_nodes.append(next_node)
             if unvisited_nodes:
+                random.seed(seedVal)
                 next_node = random.choice(unvisited_nodes)
                 stack.append(next_node)
                 visited[next_node] = True
