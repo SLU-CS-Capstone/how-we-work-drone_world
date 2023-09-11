@@ -30,7 +30,7 @@ class Maze:
                     self.graph.add_edge(node, right)
     
     def generate_maze(self):
-        spanning_tree = self.graph.get_spanning_tree(0)
+        spanning_tree = self.graph.get_spanning_tree(0, 2)
         for i in range(0, self.graph.num_nodes):
             for j in range(0, self.graph.num_nodes):
                 if spanning_tree.has_edge(i, j):
